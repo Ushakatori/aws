@@ -88,8 +88,8 @@ resource "aws_ecs_task_definition" "ecs_poc_task" {
 
   container_definitions = jsonencode([
     {
-      name      = "example-app"
-      image     = "nginx"
+      name      = "demo-app"
+      image     = "nginx:1.19.0"
       essential = true
 
       portMappings = [
