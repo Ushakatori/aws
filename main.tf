@@ -110,8 +110,9 @@ resource "aws_ecs_service" "ecs_poc_service" {
   desired_count   = 1
   launch_type     = "FARGATE"
   network_configuration {
-    subnets         = aws_subnet.ecs_vpc.*.id
-    security_groups = [aws_security_group.ecs_vpc.id]
+    subnets          = aws_subnet.ecs_vpc.*.id
+    security_groups  = [aws_security_group.ecs_vpc.id]
+    assign_public_ip = "ENABLED"
   }
   deployment_minimum_healthy_percent = 50
   deployment_maximum_percent         = 200
