@@ -107,7 +107,7 @@ resource "aws_ecs_service" "ecs_poc_service" {
   name            = "ecs_poc_service"
   cluster         = aws_ecs_cluster.ecs_poc_cluster.id
   task_definition = aws_ecs_task_definition.ecs_poc_task.arn
-  desired_count   = 3
+  desired_count   = 1
   launch_type     = "FARGATE"
   network_configuration {
     subnets         = aws_subnet.ecs_vpc.*.id
