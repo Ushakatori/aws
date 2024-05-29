@@ -112,7 +112,7 @@ resource "aws_ecs_service" "ecs_poc_service" {
   network_configuration {
     subnets          = aws_subnet.ecs_vpc.*.id
     security_groups  = [aws_security_group.ecs_vpc.id]
-    assign_public_ip = "ENABLED"
+    assign_public_ip = true
   }
   deployment_minimum_healthy_percent = 50
   deployment_maximum_percent         = 200
